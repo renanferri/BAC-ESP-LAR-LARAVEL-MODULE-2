@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plans', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('cod', 8);
-            $table->string('short_description');
-            $table->integer('price');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('clients', function (Blueprint $table) {
+            $table->uuid()->after('id');
         });
     }
 
@@ -27,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('plans');
+        Schema::dropColumns('clients', ['uuid']);
     }
 };

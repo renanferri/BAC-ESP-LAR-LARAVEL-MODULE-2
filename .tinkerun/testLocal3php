@@ -1,0 +1,19 @@
+<?php
+
+use App\Models\User;
+
+// $user = User::select('name', 'id')->with('client')->first();
+
+// $user = User::select('name', 'id')
+//     ->with([
+//         'client' => function ($client) {
+//             $client->select('document', 'birthdate', 'user_id');
+//         }
+//     ])
+//     ->first();
+
+// $user = User::select('name as nome', 'id')->with('client:user_id,document as cpf,birthdate')->first();
+
+$user = User::first();
+
+$user->client;

@@ -1,0 +1,8 @@
+{
+  "connections": [
+    {
+      "name": "dev",
+      "command": "./vendor/bin/sail tinker"
+    }
+  ]
+}

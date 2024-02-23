@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\SignatureStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SignatureHistory extends Model
 {
@@ -22,4 +23,9 @@ class SignatureHistory extends Model
     protected $casts = [        
         'old_status' => SignatureStatus::class
     ];
+
+    public function signature() : BelongsTo
+    {
+        return $this->belongsTo(Signature::class);
+    }
 }
